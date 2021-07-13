@@ -9,7 +9,9 @@
 import UIKit
 
 class noteTableViewCell: UITableViewCell {
-
+  
+    @IBOutlet weak var noteLabel: UILabel!
+    var noteDelegate: noteCellDelegate?
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -20,5 +22,8 @@ class noteTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    @IBAction func editBtn(_ sender: Any) {
+        noteDelegate?.moveToEditView()
+    }
+    
 }

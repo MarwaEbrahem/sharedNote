@@ -7,24 +7,40 @@
 //
 
 import UIKit
-
+import RxCocoa
+import RxSwift
 class allNotesViewController: UIViewController {
-
+    @IBOutlet weak var allNotesTableView: UITableView!
+    var disposeBag = DisposeBag()
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        allNotesTableView.delegate = self
+       Observable.just(["marwa","rovan"]).bind(to: allNotesTableView.rx.items(cellIdentifier: Constants.noteTableCell)){row,item,cell in
+        (cell as? noteTableViewCell)?.noteLabel.text = item
+        (cell as? noteTableViewCell)?.noteDelegate = self
+        }.disposed(by: disposeBag)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func addNoteBtn(_ sender: Any) {
+        let addNoteViewController = storyboard?.instantiateViewController(identifier: Constants.addNote) as! addNoteViewController
+        navigationController?.pushViewController(addNoteViewController, animated: true)
     }
-    */
+    
+}
 
+extension allNotesViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
+    
+}
+
+extension allNotesViewController: noteCellDelegate {
+    func moveToEditView() {
+        let editNoteViewController = storyboard?.instantiateViewController(identifier: Constants.editNote) as! editNoteViewController
+        navigationController?.pushViewController(editNoteViewController, animated: true)
+    }
+    
+    
 }
