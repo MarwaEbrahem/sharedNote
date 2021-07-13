@@ -12,6 +12,7 @@ class noteTableViewCell: UITableViewCell {
   
     @IBOutlet weak var noteLabel: UILabel!
     var noteDelegate: noteCellDelegate?
+    var editNotePosition = 0
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -23,7 +24,7 @@ class noteTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     @IBAction func editBtn(_ sender: Any) {
-        noteDelegate?.moveToEditView()
+        noteDelegate?.moveToEditView(editNoteData : noteLabel.text ?? "", notePosition : editNotePosition )
     }
     
 }

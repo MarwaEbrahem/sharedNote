@@ -24,7 +24,7 @@ class addNoteViewController: UIViewController {
     
     @IBAction func addBtn(_ sender: Any) {
         
-        addNotesViewModelObj.addNoteData(noteData: noteTxt.text ,noteCount: notesCount)
+        addNotesViewModelObj.addNoteData(noteData: noteTxt.text ,notePosition: notesCount)
         
         navigationController?.popViewController(animated: true)
     }

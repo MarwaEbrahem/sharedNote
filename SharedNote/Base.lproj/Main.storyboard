@@ -124,6 +124,9 @@
                                 <rect key="frame" x="183" y="615" width="33" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="EDIT"/>
+                                <connections>
+                                    <action selector="editBtn:" destination="iu6-Fb-DK8" eventType="touchUpInside" id="DY3-Ui-enN"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Edit note : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pKo-ID-4cc">
                                 <rect key="frame" x="66" y="251" width="222" height="21"/>
@@ -144,11 +147,17 @@
                                 <rect key="frame" x="315" y="100" width="64" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Copy link"/>
+                                <connections>
+                                    <action selector="copyLinkBtn:" destination="iu6-Fb-DK8" eventType="touchUpInside" id="Xxa-HN-icO"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.92941176889999999" green="0.92941176889999999" blue="0.88627451660000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="rek-Zf-IOG"/>
                     </view>
+                    <connections>
+                        <outlet property="editTxt" destination="mWI-P3-oDz" id="QGe-9O-JQG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NMb-tf-dVc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

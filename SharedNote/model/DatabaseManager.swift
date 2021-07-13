@@ -35,9 +35,9 @@ extension DatabaseManager : NotesDB {
         }
     }
     
-//    func updateNote(completion: @escaping (Bool) -> Void) {
-//        <#code#>
-//    }
+    func updateNote( noteStr: String ,notePosition : Int , completion: @escaping (Bool) -> Void) {
+        database.child("Notes").child("\(notePosition + 1)").setValue(noteStr)
+    }
     
     
 }

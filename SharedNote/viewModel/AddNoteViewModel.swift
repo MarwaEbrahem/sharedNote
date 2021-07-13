@@ -19,8 +19,8 @@ class AddNoteViewModel : AddNoteViewModelType{
         addNoteDrive = addNoteSubject.asDriver(onErrorJustReturn: false )
     }
        
-    func addNoteData(noteData : String , noteCount : Int) {
-        databaseObj.addNoteToFirebase(noteStr: noteData, notePosition: noteCount) { [weak self] (result) in
+    func addNoteData(noteData : String , notePosition : Int) {
+        databaseObj.addNoteToFirebase(noteStr: noteData, notePosition: notePosition) { [weak self] (result) in
             self?.addNoteSubject.onNext(result)
         }
     }

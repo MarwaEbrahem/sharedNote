@@ -11,5 +11,5 @@ import Foundation
 protocol NotesDB {
    func readNotesDataFromFirebase( completion: @escaping (Array<String>) -> Void)
    func addNoteToFirebase(noteStr: String ,notePosition : Int, completion: @escaping (Bool) -> Void)
-   //func updateNote( completion: @escaping (Bool) -> Void)
+   func updateNote( noteStr: String ,notePosition : Int , completion: @escaping (Bool) -> Void)
 }

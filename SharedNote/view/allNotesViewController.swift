@@ -27,6 +27,7 @@ class allNotesViewController: UIViewController {
             Observable.just(val).bind(to: self!.allNotesTableView.rx.items(cellIdentifier: Constants.noteTableCell)){row,item,cell in
                 (cell as? noteTableViewCell)?.noteLabel.text = item
                 (cell as? noteTableViewCell)?.noteDelegate = self
+                (cell as? noteTableViewCell)?.editNotePosition = row
             }.disposed(by: self!.disposeBag)
             
         }).disposed(by: disposeBag)
@@ -53,8 +54,10 @@ extension allNotesViewController: UITableViewDelegate {
 }
 
 extension allNotesViewController: noteCellDelegate {
-    func moveToEditView() {
+    func moveToEditView(editNoteData : String ,  notePosition : Int) {
         let editNoteViewController = storyboard?.instantiateViewController(identifier: Constants.editNote) as! editNoteViewController
+        editNoteViewController.editStr = editNoteData
+        editNoteViewController.editNotePosition = notePosition
         navigationController?.pushViewController(editNoteViewController, animated: true)
     }
     

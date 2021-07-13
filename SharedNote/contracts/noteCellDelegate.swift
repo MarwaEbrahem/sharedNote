@@ -10,6 +10,6 @@ import Foundation
 
 protocol noteCellDelegate {
     
-    func moveToEditView()
+    func moveToEditView(editNoteData : String ,  notePosition : Int)
   
 }
