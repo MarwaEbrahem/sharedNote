@@ -18,6 +18,7 @@
 		431231A5269D08AF00FDE9B3 /* noteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431231A4269D08AF00FDE9B3 /* noteTableViewCell.swift */; };
 		431231A7269D0C5100FDE9B3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431231A6269D0C5100FDE9B3 /* Constants.swift */; };
 		431231A9269D13A200FDE9B3 /* noteCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431231A8269D13A200FDE9B3 /* noteCellDelegate.swift */; };
+		431231AB269D218B00FDE9B3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 431231AA269D218B00FDE9B3 /* GoogleService-Info.plist */; };
 		93DFE9794DE7A8B1DE5D0554 /* Pods_SharedNote.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F296118C7DA306534C2FD21 /* Pods_SharedNote.framework */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +36,7 @@
 		431231A4269D08AF00FDE9B3 /* noteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = noteTableViewCell.swift; sourceTree = "<group>"; };
 		431231A6269D0C5100FDE9B3 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		431231A8269D13A200FDE9B3 /* noteCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = noteCellDelegate.swift; sourceTree = "<group>"; };
+		431231AA269D218B00FDE9B3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		68A0AEA835412D771B368951 /* Pods-SharedNote.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SharedNote.release.xcconfig"; path = "Target Support Files/Pods-SharedNote/Pods-SharedNote.release.xcconfig"; sourceTree = "<group>"; };
 		8381E540B033E08C4461F1A3 /* Pods-SharedNote.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SharedNote.debug.xcconfig"; path = "Target Support Files/Pods-SharedNote/Pods-SharedNote.debug.xcconfig"; sourceTree = "<group>"; };
 		9F296118C7DA306534C2FD21 /* Pods_SharedNote.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SharedNote.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -92,6 +94,7 @@
 				4312318E269D051800FDE9B3 /* Assets.xcassets */,
 				43123190269D051800FDE9B3 /* LaunchScreen.storyboard */,
 				43123193269D051800FDE9B3 /* Info.plist */,
+				431231AA269D218B00FDE9B3 /* GoogleService-Info.plist */,
 			);
 			path = SharedNote;
 			sourceTree = "<group>";
@@ -207,6 +210,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				43123192269D051800FDE9B3 /* LaunchScreen.storyboard in Resources */,
+				431231AB269D218B00FDE9B3 /* GoogleService-Info.plist in Resources */,
 				4312318F269D051800FDE9B3 /* Assets.xcassets in Resources */,
 				4312318D269D051700FDE9B3 /* Main.storyboard in Resources */,
 			);
