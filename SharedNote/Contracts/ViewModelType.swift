@@ -15,10 +15,12 @@ protocol AllNotesViewModelType {
      var errorDrive : Driver<Bool> {get}
      func getNotesData()
 }
+
 protocol AddNoteViewModelType {
      var addNoteDrive : Driver<Bool> {get}
      func addNoteData(noteData : String , notePosition : Int)
 }
+
 protocol EditNoteViewModelType {
      var EditNoteDrive : Driver<Bool> {get}
      func EditNoteData(noteData : String , notePosition : Int)

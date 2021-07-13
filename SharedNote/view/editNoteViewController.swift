@@ -20,10 +20,7 @@ class editNoteViewController: UIViewController {
         
     }
     
-    @IBAction func copyLinkBtn(_ sender: Any) {
-        
-    }
-    
+   
     @IBAction func editBtn(_ sender: Any) {
         editNotesViewModelObj.EditNoteData(noteData: editTxt.text, notePosition: editNotePosition)
         navigationController?.popViewController(animated: true)

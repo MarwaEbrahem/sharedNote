@@ -95,8 +95,8 @@
 		43123184269D051700FDE9B3 /* SharedNote */ = {
 			isa = PBXGroup;
 			children = (
-				4312319D269D058800FDE9B3 /* contracts */,
-				4312319C269D056D00FDE9B3 /* utils */,
+				4312319D269D058800FDE9B3 /* Contracts */,
+				4312319C269D056D00FDE9B3 /* Utils */,
 				4312319A269D053900FDE9B3 /* model */,
 				4312319B269D055100FDE9B3 /* view */,
 				43123199269D053200FDE9B3 /* viewModel */,
@@ -106,7 +106,6 @@
 				4312318E269D051800FDE9B3 /* Assets.xcassets */,
 				43123190269D051800FDE9B3 /* LaunchScreen.storyboard */,
 				43123193269D051800FDE9B3 /* Info.plist */,
-				431231AA269D218B00FDE9B3 /* GoogleService-Info.plist */,
 			);
 			path = SharedNote;
 			sourceTree = "<group>";
@@ -125,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				431231AE269DAD7B00FDE9B3 /* DatabaseManager.swift */,
+				431231AA269D218B00FDE9B3 /* GoogleService-Info.plist */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -140,22 +140,22 @@
 			path = view;
 			sourceTree = "<group>";
 		};
-		4312319C269D056D00FDE9B3 /* utils */ = {
+		4312319C269D056D00FDE9B3 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
 				431231A6269D0C5100FDE9B3 /* Constants.swift */,
 			);
-			path = utils;
+			path = Utils;
 			sourceTree = "<group>";
 		};
-		4312319D269D058800FDE9B3 /* contracts */ = {
+		4312319D269D058800FDE9B3 /* Contracts */ = {
 			isa = PBXGroup;
 			children = (
 				431231A8269D13A200FDE9B3 /* noteCellDelegate.swift */,
 				431231B0269DADE500FDE9B3 /* NotesDB.swift */,
 				431231B4269DB50E00FDE9B3 /* ViewModelType.swift */,
 			);
-			path = contracts;
+			path = Contracts;
 			sourceTree = "<group>";
 		};
 		7CC4940352581A73BB931723 /* Pods */ = {

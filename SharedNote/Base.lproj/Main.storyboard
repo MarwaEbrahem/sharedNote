@@ -55,6 +55,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Notes" id="dbl-Qb-2EB">
+                        <barButtonItem key="leftBarButtonItem" title="Copy Link" id="be5-wn-5hG">
+                            <connections>
+                                <action selector="copyLinkBtn:" destination="BYZ-38-t0r" id="0O5-aJ-wb3"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="sv6-WN-iVr">
                             <connections>
                                 <action selector="addNoteBtn:" destination="BYZ-38-t0r" id="ey4-5k-BaU"/>
@@ -143,14 +148,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fFg-lE-ZJT">
-                                <rect key="frame" x="315" y="100" width="64" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Copy link"/>
-                                <connections>
-                                    <action selector="copyLinkBtn:" destination="iu6-Fb-DK8" eventType="touchUpInside" id="Xxa-HN-icO"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.92941176889999999" green="0.92941176889999999" blue="0.88627451660000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="rek-Zf-IOG"/>

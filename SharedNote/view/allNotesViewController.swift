@@ -42,6 +42,10 @@ class allNotesViewController: UIViewController {
         navigationController?.pushViewController(addNoteViewController, animated: true)
     }
     
+    @IBAction func copyLinkBtn(_ sender: Any) {
+       UIPasteboard.general.string = "sharedNote://"
+    }
+    
     
 }
 
