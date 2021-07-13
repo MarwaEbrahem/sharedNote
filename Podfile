@@ -9,4 +9,6 @@ target 'SharedNote' do
     pod 'RxSwift', '6.1.0'
     pod 'RxCocoa', '6.1.0'
     pod 'Firebase/Analytics'
+    pod 'Firebase/Auth'
+    pod 'Firebase/Database'
 end

@@ -96,11 +96,17 @@
                                 <rect key="frame" x="191" y="539" width="32" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="ADD"/>
+                                <connections>
+                                    <action selector="addBtn:" destination="HdR-IB-cmF" eventType="touchUpInside" id="jkd-pt-gM6"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.92941176889999999" green="0.92941176889999999" blue="0.88627451660000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="jlT-VA-gJJ"/>
                     </view>
+                    <connections>
+                        <outlet property="noteTxt" destination="Vc5-CV-Qc1" id="cRb-kG-6w9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v4q-Fb-dKN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

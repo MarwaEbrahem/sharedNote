@@ -7,24 +7,18 @@
 //
 
 import UIKit
-
+import FirebaseDatabase
 class addNoteViewController: UIViewController {
-
+    @IBOutlet weak var noteTxt: UITextView!
+    private let database = Database.database().reference()
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func addBtn(_ sender: Any) {
+        database.child("note").setValue(noteTxt.text)
     }
-    */
-
+    
 }
