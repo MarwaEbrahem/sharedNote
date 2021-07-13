@@ -13,29 +13,34 @@ import FirebaseDatabase
 class allNotesViewController: UIViewController {
     @IBOutlet weak var allNotesTableView: UITableView!
     var disposeBag = DisposeBag()
-     private let database = Database.database().reference()
+    var allNotesViewModelObj : AllNotesViewModelType!
+    var notesCount = 0
     override func viewDidLoad() {
         super.viewDidLoad()
+        allNotesViewModelObj = AllNotesViewModel()
+        self.allNotesTableView.delegate = self
+        allNotesViewModelObj.notesDataDrive.drive(onNext: {[weak self] (val) in
+            self!.notesCount = val.count
+            self!.allNotesTableView.delegate = nil
+            self!.allNotesTableView.dataSource = nil
+            
+            Observable.just(val).bind(to: self!.allNotesTableView.rx.items(cellIdentifier: Constants.noteTableCell)){row,item,cell in
+                (cell as? noteTableViewCell)?.noteLabel.text = item
+                (cell as? noteTableViewCell)?.noteDelegate = self
+            }.disposed(by: self!.disposeBag)
+            
+        }).disposed(by: disposeBag)
+       
         
-        allNotesTableView.delegate = self
-       Observable.just(["marwa","rovan"]).bind(to: allNotesTableView.rx.items(cellIdentifier: Constants.noteTableCell)){row,item,cell in
-        (cell as? noteTableViewCell)?.noteLabel.text = item
-        (cell as? noteTableViewCell)?.noteDelegate = self
-        }.disposed(by: disposeBag)
+        allNotesViewModelObj.getNotesData()
     }
-    override func viewWillAppear(_ animated: Bool) {
-        database.child("note").observe(.value) { (DataSnapshot) in
-            guard let value = DataSnapshot.value  else {
-                print("error")
-                return
-            }
-            print(value)
-        }
-    }
+
     @IBAction func addNoteBtn(_ sender: Any) {
         let addNoteViewController = storyboard?.instantiateViewController(identifier: Constants.addNote) as! addNoteViewController
+        addNoteViewController.notesCount = notesCount
         navigationController?.pushViewController(addNoteViewController, animated: true)
     }
+    
     
 }
 

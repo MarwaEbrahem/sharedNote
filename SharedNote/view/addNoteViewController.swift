@@ -9,16 +9,24 @@
 import UIKit
 import FirebaseDatabase
 class addNoteViewController: UIViewController {
+    var addNotesViewModelObj : AddNoteViewModelType!
     @IBOutlet weak var noteTxt: UITextView!
     private let database = Database.database().reference()
+    
+    var notesCount = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        addNotesViewModelObj = AddNoteViewModel()
 
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func addBtn(_ sender: Any) {
-        database.child("note").setValue(noteTxt.text)
+        
+        addNotesViewModelObj.addNoteData(noteData: noteTxt.text ,noteCount: notesCount)
+        
+        navigationController?.popViewController(animated: true)
     }
     
 }
