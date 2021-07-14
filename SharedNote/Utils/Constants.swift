@@ -14,4 +14,8 @@ struct Constants {
     static let editNote = "editNote"
     static let noteTableCell = "noteCell"
     static let firebaseChild = "Notes"
+    static let internetConnectionMsg = "Failed,Check your internet connection"
+    static let refreshMsg = "Swipe down to refresh"
+    static let toastFont = "HelveticaNeue-ThinItalic"
+    static let appLink = "sharedNote://"
 }

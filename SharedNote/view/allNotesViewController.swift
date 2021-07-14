@@ -25,13 +25,13 @@ class allNotesViewController: UIViewController {
         self.allNotesTableView.delegate = self
         noInternetConnectionImg.isUserInteractionEnabled = true
         
-         //MARK: - swipe to refresh
+    //MARK: - Swipe to refresh
         let swipe = UISwipeGestureRecognizer(target: self, action: #selector(self.swipe(_:)))
         swipe.direction = .down
         noInternetConnectionImg.addGestureRecognizer(swipe)
-        //end
+    //end
         
-         //MARK: - display notes data to tableview
+    //MARK: - display notes data to tableview
         allNotesViewModelObj.notesDataDrive.drive(onNext: {[weak self] (val) in
             self!.notesCount = val.count
             self!.allNotesTableView.delegate = nil
@@ -44,20 +44,20 @@ class allNotesViewController: UIViewController {
             }.disposed(by: self!.disposeBag)
             
         }).disposed(by: disposeBag)
-        //end
+    //end
        
-       //MARK: - handel internet connection issue
+    //MARK: - handle internet connection issue
         allNotesViewModelObj.errorDrive.drive(onNext: { [weak self](result) in
             if(result){
                 self?.noInternetConnectionImg.isHidden = false
-                self?.showToast(message: "swipe down to refresh", font: UIFont(name: "HelveticaNeue-ThinItalic", size: 15) ?? UIFont())
+                self?.showToast(message: Constants.refreshMsg, font: UIFont(name: Constants.toastFont, size: 15) ?? UIFont())
             }
             else{
                 self?.noInternetConnectionImg.isHidden = true
             }
         }).disposed(by: disposeBag)
        
-       //end
+   //end
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -76,7 +76,7 @@ class allNotesViewController: UIViewController {
     }
     
     @IBAction func copyLinkBtn(_ sender: Any) {
-       UIPasteboard.general.string = "sharedNote://"
+        UIPasteboard.general.string = Constants.appLink
     }
     
     

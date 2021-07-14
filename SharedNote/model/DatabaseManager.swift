@@ -34,10 +34,11 @@ extension DatabaseManager : NotesDB {
             print(notesArray)
             completion(notesArray)
         }
-    }
+    }    
     
     func updateNote( noteStr: String ,notePosition : Int , completion: @escaping (Bool) -> Void) {
         database.child(Constants.firebaseChild).child("\(notePosition + 1)").setValue(noteStr)
+        completion(true)
     }
     
     
