@@ -13,6 +13,7 @@ import RxSwift
 protocol AllNotesViewModelType {
      var notesDataDrive : Driver<[String]> {get}
      var errorDrive : Driver<Bool> {get}
+     var emptyNoteDrive : Driver<Bool> {get}
      func getNotesData()
 }
 

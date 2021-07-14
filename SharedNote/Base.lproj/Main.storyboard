@@ -50,12 +50,25 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="noInternetConnection" translatesAutoresizingMaskIntoConstraints="NO" id="h7I-zC-dDR">
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="noInternetConnection" translatesAutoresizingMaskIntoConstraints="NO" id="h7I-zC-dDR">
                                 <rect key="frame" x="0.0" y="88" width="414" height="808"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Note is empty" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eVK-9e-xRR">
+                                <rect key="frame" x="111" y="455.5" width="192" height="39"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="32"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="h7I-zC-dDR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="9sL-cH-uWX"/>
+                            <constraint firstItem="h7I-zC-dDR" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="D0I-78-ISH"/>
+                            <constraint firstItem="h7I-zC-dDR" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="GPE-hS-zGD"/>
+                            <constraint firstAttribute="bottom" secondItem="h7I-zC-dDR" secondAttribute="bottom" id="Shb-Ty-w8Q"/>
+                            <constraint firstItem="eVK-9e-xRR" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="bf4-qK-HuE"/>
+                            <constraint firstItem="eVK-9e-xRR" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="m6y-c2-GOZ"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Notes" id="dbl-Qb-2EB">
@@ -72,6 +85,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="allNotesTableView" destination="uaJ-WB-m5u" id="wtF-Hy-141"/>
+                        <outlet property="emptyMsgLabel" destination="eVK-9e-xRR" id="MHR-tj-9tG"/>
                         <outlet property="noInternetConnectionImg" destination="h7I-zC-dDR" id="8aj-tq-4r8"/>
                     </connections>
                 </viewController>

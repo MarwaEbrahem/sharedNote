@@ -9,12 +9,12 @@
 import UIKit
 import RxCocoa
 import RxSwift
-import FirebaseDatabase
 
 class allNotesViewController: UIViewController {
     
     @IBOutlet weak var allNotesTableView: UITableView!
     @IBOutlet weak var noInternetConnectionImg: UIImageView!
+    @IBOutlet weak var emptyMsgLabel: UILabel!
     var disposeBag = DisposeBag()
     var allNotesViewModelObj : AllNotesViewModelType!
     var notesCount = 0
@@ -25,13 +25,13 @@ class allNotesViewController: UIViewController {
         self.allNotesTableView.delegate = self
         noInternetConnectionImg.isUserInteractionEnabled = true
         
-    //MARK: - Swipe to refresh
+        //MARK: - Swipe to refresh
         let swipe = UISwipeGestureRecognizer(target: self, action: #selector(self.swipe(_:)))
         swipe.direction = .down
         noInternetConnectionImg.addGestureRecognizer(swipe)
-    //end
+        //end
         
-    //MARK: - display notes data to tableview
+        //MARK: - display notes data to tableview
         allNotesViewModelObj.notesDataDrive.drive(onNext: {[weak self] (val) in
             self!.notesCount = val.count
             self!.allNotesTableView.delegate = nil
@@ -44,9 +44,9 @@ class allNotesViewController: UIViewController {
             }.disposed(by: self!.disposeBag)
             
         }).disposed(by: disposeBag)
-    //end
-       
-    //MARK: - handle internet connection issue
+        //end
+        
+        //MARK: - handle internet connection issue
         allNotesViewModelObj.errorDrive.drive(onNext: { [weak self](result) in
             if(result){
                 self?.noInternetConnectionImg.isHidden = false
@@ -56,8 +56,20 @@ class allNotesViewController: UIViewController {
                 self?.noInternetConnectionImg.isHidden = true
             }
         }).disposed(by: disposeBag)
-       
-   //end
+        
+        //end
+        
+        //MARK: - empty note
+        allNotesViewModelObj.emptyNoteDrive.drive(onNext: { [weak self](result) in
+            if(result){
+                self?.emptyMsgLabel.isHidden = false
+            }
+            else{
+                self?.emptyMsgLabel.isHidden = true
+            }
+        }).disposed(by: disposeBag)
+        
+        //end
     }
     
     override func viewWillAppear(_ animated: Bool) {
