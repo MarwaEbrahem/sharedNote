@@ -18,10 +18,12 @@ protocol AllNotesViewModelType {
 
 protocol AddNoteViewModelType {
      var addNoteDrive : Driver<Bool> {get}
+     var errorDrive: Driver<Bool> {get}
      func addNoteData(noteData : String , notePosition : Int)
 }
 
 protocol EditNoteViewModelType {
      var EditNoteDrive : Driver<Bool> {get}
+     var errorDrive: Driver<Bool> {get}
      func EditNoteData(noteData : String , notePosition : Int)
 }

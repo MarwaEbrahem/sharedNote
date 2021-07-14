@@ -13,4 +13,5 @@ struct Constants {
     static let addNote = "addNote"
     static let editNote = "editNote"
     static let noteTableCell = "noteCell"
+    static let firebaseChild = "Notes"
 }

@@ -25,6 +25,11 @@ class AllNotesViewModel : AllNotesViewModelType{
        }
     
     func getNotesData() {
+        if(!Connectivity.isConnectedToInternet){
+            errorSubject.onNext(true)
+                return
+        }
+        errorSubject.onNext(false)
         databaseObj.readNotesDataFromFirebase { [weak self] (notesData) in
             self?.notesDataSubject.onNext(notesData)
         }
