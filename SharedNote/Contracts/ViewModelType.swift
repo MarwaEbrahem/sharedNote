@@ -14,6 +14,7 @@ protocol AllNotesViewModelType {
      var notesDataDrive : Driver<[String]> {get}
      var errorDrive : Driver<Bool> {get}
      var emptyNoteDrive : Driver<Bool> {get}
+     var loadingDrive : Driver<Bool> {get}
      func getNotesData()
 }
 

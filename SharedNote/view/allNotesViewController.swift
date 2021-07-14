@@ -15,6 +15,7 @@ class allNotesViewController: UIViewController {
     @IBOutlet weak var allNotesTableView: UITableView!
     @IBOutlet weak var noInternetConnectionImg: UIImageView!
     @IBOutlet weak var emptyMsgLabel: UILabel!
+    var indicator : UIActivityIndicatorView?
     var disposeBag = DisposeBag()
     var allNotesViewModelObj : AllNotesViewModelType!
     var notesCount = 0
@@ -24,11 +25,10 @@ class allNotesViewController: UIViewController {
         allNotesViewModelObj = AllNotesViewModel()
         self.allNotesTableView.delegate = self
         noInternetConnectionImg.isUserInteractionEnabled = true
+        setupLoadingIndicator()
         
         //MARK: - Swipe to refresh
-        let swipe = UISwipeGestureRecognizer(target: self, action: #selector(self.swipe(_:)))
-        swipe.direction = .down
-        noInternetConnectionImg.addGestureRecognizer(swipe)
+        setupRefreshSwipe()
         //end
         
         //MARK: - display notes data to tableview
@@ -70,6 +70,18 @@ class allNotesViewController: UIViewController {
         }).disposed(by: disposeBag)
         
         //end
+        
+        //MARK: - loading indicator
+        allNotesViewModelObj.loadingDrive.drive(onNext: { [weak self](result) in
+            if(result){
+                self?.indicator!.startAnimating()
+            }
+            else{
+                self?.indicator!.stopAnimating()
+            }
+        }).disposed(by: disposeBag)
+        
+        //end
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -79,6 +91,17 @@ class allNotesViewController: UIViewController {
     @objc func swipe(_ sender: UISwipeGestureRecognizer) {
         noInternetConnectionImg.isHidden = true
         allNotesViewModelObj.getNotesData()
+    }
+    
+    func setupLoadingIndicator(){
+        indicator = UIActivityIndicatorView(style: .large)
+        indicator!.center = allNotesTableView.center
+        view.addSubview(indicator!)
+    }
+    func setupRefreshSwipe(){
+       let swipe = UISwipeGestureRecognizer(target: self, action: #selector(self.swipe(_:)))
+        swipe.direction = .down
+        noInternetConnectionImg.addGestureRecognizer(swipe)
     }
 
     @IBAction func addNoteBtn(_ sender: Any) {
