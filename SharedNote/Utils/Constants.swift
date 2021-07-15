@@ -18,4 +18,5 @@ struct Constants {
     static let refreshMsg = "Swipe down to refresh"
     static let toastFont = "HelveticaNeue-ThinItalic"
     static let appLink = "sharedNote://"
+    static let copyLinkMsg = "Link copied successfully"
 }

@@ -23,7 +23,6 @@ class allNotesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         allNotesViewModelObj = AllNotesViewModel()
-        allNotesTableView.delegate = self
         noInternetConnectionImg.isUserInteractionEnabled = true
         setupLoadingIndicator()
         
@@ -112,16 +111,9 @@ class allNotesViewController: UIViewController {
     
     @IBAction func copyLinkBtn(_ sender: Any) {
         UIPasteboard.general.string = Constants.appLink
+        self.showToast(message: Constants.copyLinkMsg, font: UIFont(name: Constants.toastFont, size: 15) ?? UIFont())
     }
     
-    
-}
-
-extension allNotesViewController: UITableViewDelegate {
-    
-     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-           return 169
-       }
     
 }
 
