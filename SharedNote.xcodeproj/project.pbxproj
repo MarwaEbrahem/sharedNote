@@ -17,7 +17,6 @@
 		431231A3269D062C00FDE9B3 /* editNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431231A2269D062C00FDE9B3 /* editNoteViewController.swift */; };
 		431231A5269D08AF00FDE9B3 /* noteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431231A4269D08AF00FDE9B3 /* noteTableViewCell.swift */; };
 		431231A7269D0C5100FDE9B3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431231A6269D0C5100FDE9B3 /* Constants.swift */; };
-		431231A9269D13A200FDE9B3 /* noteCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431231A8269D13A200FDE9B3 /* noteCellDelegate.swift */; };
 		431231AB269D218B00FDE9B3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 431231AA269D218B00FDE9B3 /* GoogleService-Info.plist */; };
 		431231AF269DAD7B00FDE9B3 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431231AE269DAD7B00FDE9B3 /* DatabaseManager.swift */; };
 		431231B1269DADE500FDE9B3 /* NotesDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431231B0269DADE500FDE9B3 /* NotesDB.swift */; };
@@ -42,7 +41,6 @@
 		431231A2269D062C00FDE9B3 /* editNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = editNoteViewController.swift; sourceTree = "<group>"; };
 		431231A4269D08AF00FDE9B3 /* noteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = noteTableViewCell.swift; sourceTree = "<group>"; };
 		431231A6269D0C5100FDE9B3 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		431231A8269D13A200FDE9B3 /* noteCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = noteCellDelegate.swift; sourceTree = "<group>"; };
 		431231AA269D218B00FDE9B3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		431231AE269DAD7B00FDE9B3 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		431231B0269DADE500FDE9B3 /* NotesDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesDB.swift; sourceTree = "<group>"; };
@@ -154,7 +152,6 @@
 		4312319D269D058800FDE9B3 /* Contracts */ = {
 			isa = PBXGroup;
 			children = (
-				431231A8269D13A200FDE9B3 /* noteCellDelegate.swift */,
 				431231B0269DADE500FDE9B3 /* NotesDB.swift */,
 				431231B4269DB50E00FDE9B3 /* ViewModelType.swift */,
 			);
@@ -289,7 +286,6 @@
 				431231A3269D062C00FDE9B3 /* editNoteViewController.swift in Sources */,
 				431231B1269DADE500FDE9B3 /* NotesDB.swift in Sources */,
 				431231A1269D05F700FDE9B3 /* addNoteViewController.swift in Sources */,
-				431231A9269D13A200FDE9B3 /* noteCellDelegate.swift in Sources */,
 				43123186269D051700FDE9B3 /* AppDelegate.swift in Sources */,
 				431231BB269F3FDC00FDE9B3 /* Utils.swift in Sources */,
 				431231A5269D08AF00FDE9B3 /* noteTableViewCell.swift in Sources */,

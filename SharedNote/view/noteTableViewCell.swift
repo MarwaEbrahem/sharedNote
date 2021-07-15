@@ -10,25 +10,21 @@ import UIKit
 
 class noteTableViewCell: UITableViewCell {
   
-    @IBOutlet weak var noteLabel: UILabel!
-    var noteDelegate: noteCellDelegate?
+    @IBOutlet private weak var noteLabel: UILabel!
     var editNotePosition = 0
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
+    var noteData : String = ""
+   
     override func layoutSubviews() {
         super.layoutSubviews()
+        noteLabel.text = noteData
         contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 5, left: 10, bottom: 0, right: 10))
     }
     @IBAction func editBtn(_ sender: Any) {
-        noteDelegate?.moveToEditView(editNoteData : noteLabel.text ?? "", notePosition : editNotePosition )
+        let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
+        guard let editNotePage = storyBoard.instantiateViewController(identifier: Constants.editNote) as? editNoteViewController else {return}
+        editNotePage.editNotePosition = editNotePosition
+        let navVC = self.window?.rootViewController as? UINavigationController
+        navVC?.pushViewController(editNotePage, animated: true)
     }
     
 }

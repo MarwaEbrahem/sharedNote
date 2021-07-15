@@ -37,13 +37,19 @@ class allNotesViewController: UIViewController {
             self!.allNotesTableView.delegate = nil
             self!.allNotesTableView.dataSource = nil
             Observable.just(val).bind(to: self!.allNotesTableView.rx.items(cellIdentifier: Constants.noteTableCell)){row,item,cell in
-                (cell as? noteTableViewCell)?.noteLabel.text = item
-                (cell as? noteTableViewCell)?.noteDelegate = self
+                (cell as? noteTableViewCell)?.noteData = item
                 (cell as? noteTableViewCell)?.editNotePosition = row + 1
             }.disposed(by: self!.disposeBag)
             
         }).disposed(by: disposeBag)
         //end
+
+         allNotesTableView.rx.itemSelected.subscribe{(IndexPath) in
+            let editNoteViewController = self.storyboard?.instantiateViewController(identifier: Constants.editNote) as! editNoteViewController
+            editNoteViewController.editNotePosition = IndexPath.element![1]+1
+            self.navigationController?.pushViewController(editNoteViewController, animated: true)
+        }.disposed(by: disposeBag)
+        
         
         //MARK: - handle internet connection issue
         allNotesViewModelObj.errorDrive.drive(onNext: { [weak self](result) in
@@ -84,6 +90,7 @@ class allNotesViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
         allNotesViewModelObj.getNotesData()
     }
     
@@ -107,17 +114,6 @@ class allNotesViewController: UIViewController {
         let addNoteViewController = storyboard?.instantiateViewController(identifier: Constants.addNote) as! addNoteViewController
         addNoteViewController.notesCount = notesCount
         navigationController?.pushViewController(addNoteViewController, animated: true)
-    }
-    
-    
-}
-
-extension allNotesViewController: noteCellDelegate {
-    func moveToEditView(editNoteData : String ,  notePosition : Int) {
-        let editNoteViewController = storyboard?.instantiateViewController(identifier: Constants.editNote) as! editNoteViewController
-        editNoteViewController.editStr = editNoteData
-        editNoteViewController.editNotePosition = notePosition
-        navigationController?.pushViewController(editNoteViewController, animated: true)
     }
     
     
