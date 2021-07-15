@@ -113,9 +113,9 @@
 		43123199269D053200FDE9B3 /* viewModel */ = {
 			isa = PBXGroup;
 			children = (
-				431231B2269DB45F00FDE9B3 /* AllNotesViewModel.swift */,
-				431231B6269DC8BA00FDE9B3 /* AddNoteViewModel.swift */,
-				431231B8269DDCED00FDE9B3 /* EditNoteViewModel.swift */,
+				436A8ADE26A08A3E00D9225F /* allNotes */,
+				436A8ADF26A08A4C00D9225F /* addNote */,
+				436A8AE026A08A5B00D9225F /* editNote */,
 			);
 			path = viewModel;
 			sourceTree = "<group>";
@@ -132,10 +132,9 @@
 		4312319B269D055100FDE9B3 /* view */ = {
 			isa = PBXGroup;
 			children = (
-				4312319E269D05DC00FDE9B3 /* AllNotesViewController.swift */,
-				431231A0269D05F700FDE9B3 /* AddNoteViewController.swift */,
-				431231A2269D062C00FDE9B3 /* EditNoteViewController.swift */,
-				431231A4269D08AF00FDE9B3 /* NoteTableViewCell.swift */,
+				436A8ADB26A089BC00D9225F /* allNotes */,
+				436A8ADC26A089E200D9225F /* addNote */,
+				436A8ADD26A089FF00D9225F /* editNote */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -156,6 +155,55 @@
 				431231B4269DB50E00FDE9B3 /* ViewModelType.swift */,
 			);
 			path = Contracts;
+			sourceTree = "<group>";
+		};
+		436A8ADB26A089BC00D9225F /* allNotes */ = {
+			isa = PBXGroup;
+			children = (
+				4312319E269D05DC00FDE9B3 /* AllNotesViewController.swift */,
+				431231A4269D08AF00FDE9B3 /* NoteTableViewCell.swift */,
+			);
+			path = allNotes;
+			sourceTree = "<group>";
+		};
+		436A8ADC26A089E200D9225F /* addNote */ = {
+			isa = PBXGroup;
+			children = (
+				431231A0269D05F700FDE9B3 /* AddNoteViewController.swift */,
+			);
+			path = addNote;
+			sourceTree = "<group>";
+		};
+		436A8ADD26A089FF00D9225F /* editNote */ = {
+			isa = PBXGroup;
+			children = (
+				431231A2269D062C00FDE9B3 /* EditNoteViewController.swift */,
+			);
+			path = editNote;
+			sourceTree = "<group>";
+		};
+		436A8ADE26A08A3E00D9225F /* allNotes */ = {
+			isa = PBXGroup;
+			children = (
+				431231B2269DB45F00FDE9B3 /* AllNotesViewModel.swift */,
+			);
+			path = allNotes;
+			sourceTree = "<group>";
+		};
+		436A8ADF26A08A4C00D9225F /* addNote */ = {
+			isa = PBXGroup;
+			children = (
+				431231B6269DC8BA00FDE9B3 /* AddNoteViewModel.swift */,
+			);
+			path = addNote;
+			sourceTree = "<group>";
+		};
+		436A8AE026A08A5B00D9225F /* editNote */ = {
+			isa = PBXGroup;
+			children = (
+				431231B8269DDCED00FDE9B3 /* EditNoteViewModel.swift */,
+			);
+			path = editNote;
 			sourceTree = "<group>";
 		};
 		7CC4940352581A73BB931723 /* Pods */ = {
