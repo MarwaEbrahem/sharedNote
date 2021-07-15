@@ -17,6 +17,6 @@ struct Constants {
     static let internetConnectionMsg = "Failed,Check your internet connection"
     static let refreshMsg = "Swipe down to refresh"
     static let toastFont = "HelveticaNeue-ThinItalic"
-    static let appLink = "sharedNote://"
+    static let appLink = "sharedNote://noteId="
     static let copyLinkMsg = "Link copied successfully"
 }

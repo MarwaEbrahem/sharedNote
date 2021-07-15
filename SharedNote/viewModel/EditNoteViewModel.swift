@@ -11,15 +11,31 @@ import RxSwift
 import RxCocoa
 
 class EditNoteViewModel : EditNoteViewModelType{
+    var noteDataDrive: Driver<String>
+    
     var errorDrive: Driver<Bool>
     var EditNoteDrive: Driver<Bool>
     var EditNoteSubject = PublishSubject<Bool>()
     var errorSubject = PublishSubject<Bool>()
+    var noteDataSubject = PublishSubject<String>()
     var databaseObj = DatabaseManager.shared
     
     init() {
         EditNoteDrive = EditNoteSubject.asDriver(onErrorJustReturn: false )
         errorDrive = errorSubject.asDriver(onErrorJustReturn: false)
+        noteDataDrive = noteDataSubject.asDriver(onErrorJustReturn: "" )
+    }
+    
+    func getNoteData(notePosition : Int) {
+        if(!Connectivity.isConnectedToInternet){
+            errorSubject.onNext(true)
+            return
+        }
+        errorSubject.onNext(false)
+        databaseObj.readSpecificNoteFromFirebase(notePosition: notePosition, completion:{ [weak self] (result) in
+            self?.noteDataSubject.onNext(result)
+        })
+        
     }
     
     func EditNoteData(noteData: String, notePosition: Int) {
@@ -28,7 +44,7 @@ class EditNoteViewModel : EditNoteViewModelType{
             return
         }
         errorSubject.onNext(false)
-        databaseObj.addNoteToFirebase(noteStr: noteData, notePosition: notePosition) { [weak self] (result) in
+        databaseObj.updateNote(noteStr: noteData, notePosition: notePosition) { [weak self] (result) in
             self?.EditNoteSubject.onNext(result)
         }
     }

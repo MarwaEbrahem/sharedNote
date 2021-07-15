@@ -37,8 +37,16 @@ extension DatabaseManager : NotesDB {
     }    
     
     func updateNote( noteStr: String ,notePosition : Int , completion: @escaping (Bool) -> Void) {
-        database.child(Constants.firebaseChild).child("\(notePosition + 1)").setValue(noteStr)
+        database.child(Constants.firebaseChild).child("\(notePosition)").setValue(noteStr)
         completion(true)
+    }
+    
+    func readSpecificNoteFromFirebase(notePosition : Int,completion: @escaping (String) -> Void) {
+        var noteData : String = ""
+        database.child(Constants.firebaseChild).child("\(notePosition)").observe(.value) { (snapshot) in
+            noteData = snapshot.value as? String ?? " "
+            completion(noteData)
+        }
     }
     
     

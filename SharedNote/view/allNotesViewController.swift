@@ -39,7 +39,7 @@ class allNotesViewController: UIViewController {
             Observable.just(val).bind(to: self!.allNotesTableView.rx.items(cellIdentifier: Constants.noteTableCell)){row,item,cell in
                 (cell as? noteTableViewCell)?.noteLabel.text = item
                 (cell as? noteTableViewCell)?.noteDelegate = self
-                (cell as? noteTableViewCell)?.editNotePosition = row
+                (cell as? noteTableViewCell)?.editNotePosition = row + 1
             }.disposed(by: self!.disposeBag)
             
         }).disposed(by: disposeBag)
@@ -107,11 +107,6 @@ class allNotesViewController: UIViewController {
         let addNoteViewController = storyboard?.instantiateViewController(identifier: Constants.addNote) as! addNoteViewController
         addNoteViewController.notesCount = notesCount
         navigationController?.pushViewController(addNoteViewController, animated: true)
-    }
-    
-    @IBAction func copyLinkBtn(_ sender: Any) {
-        UIPasteboard.general.string = Constants.appLink
-        self.showToast(message: Constants.copyLinkMsg, font: UIFont(name: Constants.toastFont, size: 15) ?? UIFont())
     }
     
     

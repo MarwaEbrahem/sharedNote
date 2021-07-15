@@ -25,7 +25,9 @@ protocol AddNoteViewModelType {
 }
 
 protocol EditNoteViewModelType {
+     var noteDataDrive : Driver<String> {get}
      var EditNoteDrive : Driver<Bool> {get}
      var errorDrive: Driver<Bool> {get}
      func EditNoteData(noteData : String , notePosition : Int)
+     func getNoteData(notePosition : Int)
 }

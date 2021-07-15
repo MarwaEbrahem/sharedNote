@@ -48,6 +48,24 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // to restore the scene back to its current state.
     }
 
-
+    func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
+        if let url = URLContexts.first?.url{
+            print(url)
+            let urlString = url.absoluteString
+            let component = urlString.components(separatedBy: "=")
+            if component.count > 1 , let noteId = component.last {
+                print(noteId)
+                navigateToEditNoteVC(noteId: Int(noteId) ?? 1)
+            }
+        }
+    }
+    
+    func navigateToEditNoteVC(noteId : Int){
+        let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
+        guard let editNotePage = storyBoard.instantiateViewController(identifier: Constants.editNote) as? editNoteViewController else {return}
+        editNotePage.editNotePosition = noteId
+        let navVC = self.window?.rootViewController as? UINavigationController
+        navVC?.pushViewController(editNotePage, animated: true)
+    }
 }
 
