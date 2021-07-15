@@ -19,6 +19,8 @@ class editNoteViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        editTxt.layer.cornerRadius = 10
+        editTxt.layer.masksToBounds = true
         editNotesViewModelObj = EditNoteViewModel()
         editTxt.text = editStr
     //MARK: - handle internet connection issue

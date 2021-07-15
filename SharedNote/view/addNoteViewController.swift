@@ -20,6 +20,9 @@ class addNoteViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        noteTxt.layer.cornerRadius = 10
+        noteTxt.layer.masksToBounds = true
+        
         addNotesViewModelObj = AddNoteViewModel()
         
     //MARK: - handle internet connection issue

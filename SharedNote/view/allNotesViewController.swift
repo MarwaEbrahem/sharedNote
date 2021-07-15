@@ -23,7 +23,7 @@ class allNotesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         allNotesViewModelObj = AllNotesViewModel()
-        self.allNotesTableView.delegate = self
+        allNotesTableView.delegate = self
         noInternetConnectionImg.isUserInteractionEnabled = true
         setupLoadingIndicator()
         
@@ -34,9 +34,9 @@ class allNotesViewController: UIViewController {
         //MARK: - display notes data to tableview
         allNotesViewModelObj.notesDataDrive.drive(onNext: {[weak self] (val) in
             self!.notesCount = val.count
+            
             self!.allNotesTableView.delegate = nil
             self!.allNotesTableView.dataSource = nil
-            
             Observable.just(val).bind(to: self!.allNotesTableView.rx.items(cellIdentifier: Constants.noteTableCell)){row,item,cell in
                 (cell as? noteTableViewCell)?.noteLabel.text = item
                 (cell as? noteTableViewCell)?.noteDelegate = self
@@ -119,9 +119,9 @@ class allNotesViewController: UIViewController {
 
 extension allNotesViewController: UITableViewDelegate {
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
-    }
+     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+           return 169
+       }
     
 }
 
