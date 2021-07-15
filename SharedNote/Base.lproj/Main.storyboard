@@ -10,7 +10,7 @@
         <!--Notes-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="allNotesViewController" customModule="SharedNote" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="AllNotesViewController" customModule="SharedNote" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -19,7 +19,7 @@
                                 <rect key="frame" x="0.0" y="93" width="414" height="803"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="noteCell" rowHeight="59" id="YXo-xx-94z" customClass="noteTableViewCell" customModule="SharedNote" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="noteCell" rowHeight="59" id="YXo-xx-94z" customClass="NoteTableViewCell" customModule="SharedNote" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="59"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YXo-xx-94z" id="Wbh-WI-ivX">
@@ -108,7 +108,7 @@
         <!--Add Note View Controller-->
         <scene sceneID="1Nv-uM-vcb">
             <objects>
-                <viewController storyboardIdentifier="addNote" id="HdR-IB-cmF" customClass="addNoteViewController" customModule="SharedNote" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="addNote" id="HdR-IB-cmF" customClass="AddNoteViewController" customModule="SharedNote" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="g3b-Ie-L6T">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -166,7 +166,7 @@
         <!--Edit Note View Controller-->
         <scene sceneID="IIg-NA-sZE">
             <objects>
-                <viewController storyboardIdentifier="editNote" id="iu6-Fb-DK8" customClass="editNoteViewController" customModule="SharedNote" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="editNote" id="iu6-Fb-DK8" customClass="EditNoteViewController" customModule="SharedNote" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="O0w-gq-BJu">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

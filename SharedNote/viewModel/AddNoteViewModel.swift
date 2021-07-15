@@ -16,24 +16,22 @@ class AddNoteViewModel : AddNoteViewModelType{
     var databaseObj = DatabaseManager.shared
     var errorDrive: Driver<Bool>
     var errorSubject = PublishSubject<Bool>()
-       
+    
     
     init() {
         addNoteDrive = addNoteSubject.asDriver(onErrorJustReturn: false )
         errorDrive = errorSubject.asDriver(onErrorJustReturn: false)
     }
-       
+    
     func addNoteData(noteData : String , notePosition : Int) {
         if(!Connectivity.isConnectedToInternet){
             errorSubject.onNext(true)
-            
-                return
+            return
         }
         errorSubject.onNext(false)
         databaseObj.addNoteToFirebase(noteStr: noteData, notePosition: notePosition) { [weak self] (result) in
-            self?.addNoteSubject.onNext(result)
+            guard let self = self else {return}
+            self.addNoteSubject.onNext(result)
         }
     }
-    
-    
 }

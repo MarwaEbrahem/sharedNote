@@ -62,7 +62,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     func navigateToEditNoteVC(noteId : Int){
         let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
-        guard let editNotePage = storyBoard.instantiateViewController(identifier: Constants.editNote) as? editNoteViewController else {return}
+        guard let editNotePage = storyBoard.instantiateViewController(identifier: Constants.editNote) as? EditNoteViewController else {return}
         editNotePage.editNotePosition = noteId
         let navVC = self.window?.rootViewController as? UINavigationController
         navVC?.pushViewController(editNotePage, animated: true)

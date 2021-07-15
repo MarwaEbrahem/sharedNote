@@ -22,32 +22,31 @@ class AllNotesViewModel : AllNotesViewModelType{
     var loadingSubject = PublishSubject<Bool>()
     
     var databaseObj = DatabaseManager.shared
-     
-       init() {
-           notesDataDrive = notesDataSubject.asDriver(onErrorJustReturn: [] )
-           errorDrive = errorSubject.asDriver(onErrorJustReturn: false)
-           emptyNoteDrive = emptyNoteSubject.asDriver(onErrorJustReturn: false)
-           loadingDrive = loadingSubject.asDriver(onErrorJustReturn: false)
-       }
+    
+    init() {
+        notesDataDrive = notesDataSubject.asDriver(onErrorJustReturn: [] )
+        errorDrive = errorSubject.asDriver(onErrorJustReturn: false)
+        emptyNoteDrive = emptyNoteSubject.asDriver(onErrorJustReturn: false)
+        loadingDrive = loadingSubject.asDriver(onErrorJustReturn: false)
+    }
     
     func getNotesData() {
         if(!Connectivity.isConnectedToInternet){
             errorSubject.onNext(true)
-                return
+            return
         }
         loadingSubject.onNext(true)
         errorSubject.onNext(false)
         databaseObj.readNotesDataFromFirebase { [weak self] (notesData) in
+            guard let self = self else {return}
             if(notesData.count == 0){
-                self?.emptyNoteSubject.onNext(true)
-                self?.loadingSubject.onNext(false)
+                self.emptyNoteSubject.onNext(true)
+                self.loadingSubject.onNext(false)
             }else{
-                 self?.emptyNoteSubject.onNext(false)
-                 self?.loadingSubject.onNext(false)
+                self.emptyNoteSubject.onNext(false)
+                self.loadingSubject.onNext(false)
             }
-            self?.notesDataSubject.onNext(notesData)
+            self.notesDataSubject.onNext(notesData)
         }
     }
-    
-    
 }

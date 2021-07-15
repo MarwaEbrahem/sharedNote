@@ -8,7 +8,7 @@
 
 import UIKit
 
-class noteTableViewCell: UITableViewCell {
+class NoteTableViewCell: UITableViewCell {
   
     @IBOutlet private weak var noteLabel: UILabel!
     var editNotePosition = 0
@@ -21,7 +21,7 @@ class noteTableViewCell: UITableViewCell {
     }
     @IBAction func editBtn(_ sender: Any) {
         let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
-        guard let editNotePage = storyBoard.instantiateViewController(identifier: Constants.editNote) as? editNoteViewController else {return}
+        guard let editNotePage = storyBoard.instantiateViewController(identifier: Constants.editNote) as? EditNoteViewController else {return}
         editNotePage.editNotePosition = editNotePosition
         let navVC = self.window?.rootViewController as? UINavigationController
         navVC?.pushViewController(editNotePage, animated: true)

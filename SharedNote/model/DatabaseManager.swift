@@ -48,6 +48,4 @@ extension DatabaseManager : NotesDB {
             completion(noteData)
         }
     }
-    
-    
 }

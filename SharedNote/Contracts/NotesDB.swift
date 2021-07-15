@@ -12,5 +12,5 @@ protocol NotesDB {
    func readNotesDataFromFirebase( completion: @escaping (Array<String>) -> Void)
    func addNoteToFirebase(noteStr: String ,notePosition : Int, completion: @escaping (Bool) -> Void)
    func updateNote( noteStr: String ,notePosition : Int , completion: @escaping (Bool) -> Void)
-func readSpecificNoteFromFirebase(notePosition : Int,completion: @escaping (String) -> Void)
+   func readSpecificNoteFromFirebase(notePosition : Int,completion: @escaping (String) -> Void)
 }

@@ -21,7 +21,6 @@ struct Connectivity {
 extension UIViewController {
     
     func showToast(message : String, font: UIFont) {
-        
         let toastLabel = UILabel(frame: CGRect(x: self.view.frame.size.width/2 - 190, y: self.view.frame.size.height-125, width: 380, height: 35))
         toastLabel.backgroundColor = UIColor.black.withAlphaComponent(0.6)
         toastLabel.textColor = UIColor.white

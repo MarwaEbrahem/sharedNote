@@ -12,10 +12,10 @@
 		4312318D269D051700FDE9B3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4312318B269D051700FDE9B3 /* Main.storyboard */; };
 		4312318F269D051800FDE9B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4312318E269D051800FDE9B3 /* Assets.xcassets */; };
 		43123192269D051800FDE9B3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43123190269D051800FDE9B3 /* LaunchScreen.storyboard */; };
-		4312319F269D05DC00FDE9B3 /* allNotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4312319E269D05DC00FDE9B3 /* allNotesViewController.swift */; };
-		431231A1269D05F700FDE9B3 /* addNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431231A0269D05F700FDE9B3 /* addNoteViewController.swift */; };
-		431231A3269D062C00FDE9B3 /* editNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431231A2269D062C00FDE9B3 /* editNoteViewController.swift */; };
-		431231A5269D08AF00FDE9B3 /* noteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431231A4269D08AF00FDE9B3 /* noteTableViewCell.swift */; };
+		4312319F269D05DC00FDE9B3 /* AllNotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4312319E269D05DC00FDE9B3 /* AllNotesViewController.swift */; };
+		431231A1269D05F700FDE9B3 /* AddNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431231A0269D05F700FDE9B3 /* AddNoteViewController.swift */; };
+		431231A3269D062C00FDE9B3 /* EditNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431231A2269D062C00FDE9B3 /* EditNoteViewController.swift */; };
+		431231A5269D08AF00FDE9B3 /* NoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431231A4269D08AF00FDE9B3 /* NoteTableViewCell.swift */; };
 		431231A7269D0C5100FDE9B3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431231A6269D0C5100FDE9B3 /* Constants.swift */; };
 		431231AB269D218B00FDE9B3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 431231AA269D218B00FDE9B3 /* GoogleService-Info.plist */; };
 		431231AF269DAD7B00FDE9B3 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431231AE269DAD7B00FDE9B3 /* DatabaseManager.swift */; };
@@ -36,10 +36,10 @@
 		4312318E269D051800FDE9B3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		43123191269D051800FDE9B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		43123193269D051800FDE9B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4312319E269D05DC00FDE9B3 /* allNotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = allNotesViewController.swift; sourceTree = "<group>"; };
-		431231A0269D05F700FDE9B3 /* addNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addNoteViewController.swift; sourceTree = "<group>"; };
-		431231A2269D062C00FDE9B3 /* editNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = editNoteViewController.swift; sourceTree = "<group>"; };
-		431231A4269D08AF00FDE9B3 /* noteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = noteTableViewCell.swift; sourceTree = "<group>"; };
+		4312319E269D05DC00FDE9B3 /* AllNotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllNotesViewController.swift; sourceTree = "<group>"; };
+		431231A0269D05F700FDE9B3 /* AddNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteViewController.swift; sourceTree = "<group>"; };
+		431231A2269D062C00FDE9B3 /* EditNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNoteViewController.swift; sourceTree = "<group>"; };
+		431231A4269D08AF00FDE9B3 /* NoteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTableViewCell.swift; sourceTree = "<group>"; };
 		431231A6269D0C5100FDE9B3 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		431231AA269D218B00FDE9B3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		431231AE269DAD7B00FDE9B3 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
@@ -132,10 +132,10 @@
 		4312319B269D055100FDE9B3 /* view */ = {
 			isa = PBXGroup;
 			children = (
-				4312319E269D05DC00FDE9B3 /* allNotesViewController.swift */,
-				431231A0269D05F700FDE9B3 /* addNoteViewController.swift */,
-				431231A2269D062C00FDE9B3 /* editNoteViewController.swift */,
-				431231A4269D08AF00FDE9B3 /* noteTableViewCell.swift */,
+				4312319E269D05DC00FDE9B3 /* AllNotesViewController.swift */,
+				431231A0269D05F700FDE9B3 /* AddNoteViewController.swift */,
+				431231A2269D062C00FDE9B3 /* EditNoteViewController.swift */,
+				431231A4269D08AF00FDE9B3 /* NoteTableViewCell.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -283,18 +283,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				431231A3269D062C00FDE9B3 /* editNoteViewController.swift in Sources */,
+				431231A3269D062C00FDE9B3 /* EditNoteViewController.swift in Sources */,
 				431231B1269DADE500FDE9B3 /* NotesDB.swift in Sources */,
-				431231A1269D05F700FDE9B3 /* addNoteViewController.swift in Sources */,
+				431231A1269D05F700FDE9B3 /* AddNoteViewController.swift in Sources */,
 				43123186269D051700FDE9B3 /* AppDelegate.swift in Sources */,
 				431231BB269F3FDC00FDE9B3 /* Utils.swift in Sources */,
-				431231A5269D08AF00FDE9B3 /* noteTableViewCell.swift in Sources */,
+				431231A5269D08AF00FDE9B3 /* NoteTableViewCell.swift in Sources */,
 				431231B7269DC8BA00FDE9B3 /* AddNoteViewModel.swift in Sources */,
 				431231A7269D0C5100FDE9B3 /* Constants.swift in Sources */,
 				431231B3269DB45F00FDE9B3 /* AllNotesViewModel.swift in Sources */,
 				431231B5269DB50E00FDE9B3 /* ViewModelType.swift in Sources */,
 				431231B9269DDCED00FDE9B3 /* EditNoteViewModel.swift in Sources */,
-				4312319F269D05DC00FDE9B3 /* allNotesViewController.swift in Sources */,
+				4312319F269D05DC00FDE9B3 /* AllNotesViewController.swift in Sources */,
 				43123188269D051700FDE9B3 /* SceneDelegate.swift in Sources */,
 				431231AF269DAD7B00FDE9B3 /* DatabaseManager.swift in Sources */,
 			);
